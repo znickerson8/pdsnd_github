@@ -151,10 +151,10 @@ def load_data(city, month, day):
     return df
 
 def print_head(df):
-    i = 5
+    r = 5
     n = len(df)
-    while True and i <= n:
-        if i == 5:
+    while True and r <= n:
+        if r == 5:
             statement = "\nWould you like to see the first five rows of the data in the filtered data frame? ('Y' to show first 5 rows, 'N' to proceed to statistics): "
         else:
             statement = "\nWould you like to see the next five rows of the data in the filtered data frame? ('Y' to show first 5 rows, 'N' to proceed to statistics): "
@@ -163,8 +163,8 @@ def print_head(df):
             print("\nERROR: Your entry is not valid, please enter 'Y' or 'N'")
         else:
             if printHead == 'Y':
-                print(df[i-5:i])
-                i = i + 5
+                print(df[r-5:r])
+                r = r + 5
                 continue
             else:
                 break            
@@ -198,7 +198,7 @@ def time_stats(df,city,month,day):
     popularHour = pd.DataFrame(df['hour']).mode()
     print(popularHour['hour'][0])
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s milliseconds." % (time.time() - start_time)*1000)
     print('-'*40)
 
 def station_stats(df):
@@ -223,7 +223,7 @@ def station_stats(df):
     tripStationMode = pd.DataFrame(df['trip_start_end_station']).mode()
     print(tripStationMode['trip_start_end_station'][0])
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s milliseconds." % (time.time() - start_time)*1000)
     print('-'*40)
 
 def trip_duration_stats(df):
@@ -274,7 +274,7 @@ def user_stats(df,city):
     else:
         print("\nWARNING: Cannot calculate statistics by birth year type because that variable is not reported in the data for the city of",city.title())
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s milliseconds." % (time.time() - start_time)*1000)
     print('-'*40)   
 
 def main():
