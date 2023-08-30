@@ -27,9 +27,10 @@ For the final project in the Python section of Udacity's **Programming for Data 
 13. Most common year of birth for all users
 
 ### Files used
-chicago.csv
-new_york_city.csv
-washington.csv
+
+- chicago.csv
+- new_york_city.csv
+- washington.csv
 
 ### Credits
 None to report.
